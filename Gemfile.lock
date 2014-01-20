@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    curb (0.8.5)
+    eventmachine (1.0.3)
+    faye-websocket (0.6.3)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.2.0)
+    puma (2.4.1)
+      rack (>= 1.1, < 2.0)
+    rack (1.5.2)
+    socker (0.0.1)
+      faye-websocket
+    websocket-driver (0.2.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  curb
+  puma
+  socker
