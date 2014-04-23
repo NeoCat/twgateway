@@ -25,6 +25,7 @@ class TwGateway < Socker::App
 
   def message(socket, event)
     return socket.close if event.data == 'bye'
+    return socket.send('##pong##') if event.data == 'ping'
     url = event.data
     if url.start_with?("https://userstream.twitter.com/1.1/user.json?") and
         url.match(/[?&]oauth_consumer_key=93rRnGZHjH5tMSuvkIMNg&/)
