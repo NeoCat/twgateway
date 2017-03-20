@@ -27,7 +27,8 @@ class TwGateway < Socker::App
     return socket.close if event.data == 'bye'
     return socket.send('##pong##') if event.data == 'ping'
     url = event.data
-    if url.start_with?("https://userstream.twitter.com/1.1/user.json?") and
+    if (url.start_with?("https://userstream.twitter.com/1.1/user.json?") or
+        url.start_with?("https://stream.twitter.com/1.1/statuses/filter.json?")) and
         url.match(/[?&]oauth_consumer_key=93rRnGZHjH5tMSuvkIMNg&/)
       log "URL: #{url}"
       c = Curl::Easy.new(url) do |curl|
