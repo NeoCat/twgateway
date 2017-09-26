@@ -19,7 +19,7 @@ class TwGateway < Socker::App
   def disconnect(socket, event)
     log "disconnected: + #{socket.env['REMOTE_ADDR']}"
     c = @active_curl.delete(socket)
-    c.close
+    c&.close
     log "closed #{c}"
   end
 

@@ -1,17 +1,36 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    curb (0.8.5)
-    eventmachine (1.0.3)
-    faye-websocket (0.6.3)
+    backports (3.8.0)
+    curb (0.9.4)
+    eventmachine (1.2.5)
+    faye-websocket (0.10.7)
       eventmachine (>= 0.12.0)
-      websocket-driver (>= 0.2.0)
-    puma (2.4.1)
-      rack (>= 1.1, < 2.0)
-    rack (1.5.2)
-    socker (0.0.1)
+      websocket-driver (>= 0.5.1)
+    multi_json (1.12.2)
+    mustermann (1.0.1)
+    puma (3.10.0)
+    rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
+    sinatra-contrib (2.0.0)
+      backports (>= 2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.0)
+      sinatra (= 2.0.0)
+      tilt (>= 1.3, < 3)
+    socker (0.0.4)
       faye-websocket
-    websocket-driver (0.2.3)
+    tilt (2.0.8)
+    websocket-driver (0.7.0)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
 
 PLATFORMS
   ruby
@@ -19,4 +38,9 @@ PLATFORMS
 DEPENDENCIES
   curb
   puma
+  sinatra
+  sinatra-contrib
   socker
+
+BUNDLED WITH
+   1.15.4
