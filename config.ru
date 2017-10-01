@@ -3,4 +3,11 @@ load './twgateway.rb'
 
 Faye::WebSocket.load_adapter('puma')
 
-run Rack::URLMap.new('/' => TwGateway.new.to_app)
+class Ping < Sinatra::Base
+  get '/' do
+    'pong'
+  end
+end
+
+run Rack::URLMap.new('/' => TwGateway.new.to_app,
+                     '/ping' => Ping)
